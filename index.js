@@ -52,10 +52,21 @@ function init(){
 
     arMarker[0] = new THREEx.ArMarkerControls(arContext, camera, {
         type : 'pattern',
-        patternUrl : './assets/data/ARBB.patt',
+        patternUrl : './assets/data/patt.hiro',
         changeMatrixMode: 'cameraTransformMatrix'
     });
 
+    arMarker[1] = new THREEx.ArMarkerControls(arContext, camera, {
+        type : 'pattern',
+        patternUrl : './assets/data/u4bi.patt',
+        changeMatrixMode: 'cameraTransformMatrix'
+    });
+
+    arMarker[2] = new THREEx.ArMarkerControls(arContext, camera, {
+        type: 'pattern',
+        patternUrl: './assets/data/ARBB.patt',
+        changeMatrixMode: 'cameraTransformMatrix'
+    });
 
 
 
