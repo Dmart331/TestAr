@@ -42,7 +42,7 @@ function init(){
     };
 
     var loader = new THREE.FBXLoader( manager );
-    loader.load( 'Assets/Data/BB.fbx', function( object ) {
+    loader.load( 'assets/data/BB.fbx', function( object ) {
         scene.add( object );
     }, onProgress, onError );
 
