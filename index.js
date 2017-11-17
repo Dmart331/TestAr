@@ -28,7 +28,7 @@ function init(){
     container.appendChild(renderer.domElement);
     scene.add(camera);
     scene.visible = false;
-    var mesh;
+    var mesh = null;
 
     var manager = new THREE.LoadingManager();
     manager.onProgress = function (item, loaded, total) {
