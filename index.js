@@ -28,7 +28,6 @@ function init(){
     container.appendChild(renderer.domElement);
     scene.add(camera);
     scene.visible = false;
-    var mesh = null;
 
     var manager = new THREE.LoadingManager();
     manager.onProgress = function (item, loaded, total) {
@@ -46,12 +45,14 @@ function init(){
     loader.load('assets/data/BB.fbx', function (object) {
         geometry = object.geometry;
         material = object.material;
-       mesh = object;
-        scene.add( object );
+        console.log("Adding mesh");
+
+        mesh = new THREE.Mesh(geometry, material);
+        scene.add( mesh );
     }, onProgress, onError );
 
-    console.log("Adding mesh");
-    scene.add(mesh);
+
+
     var onError = function (xhr) {
         console.error(xhr);
     };
