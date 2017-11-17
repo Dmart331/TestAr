@@ -31,7 +31,7 @@ function init(){
 
 
     mesh = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshBasicMaterial({
-        color: 0xFF00FF,
+        color: 0x008000,
         transparent: true,
         opacity: 0.5
     }));
@@ -105,6 +105,6 @@ function render(){
     scene.visible = camera.visible;
 
 
-    mesh.rotateX(.1);
+    mesh.rotateX(.01);
 
 }          
