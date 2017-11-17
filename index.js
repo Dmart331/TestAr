@@ -29,13 +29,13 @@ function init(){
     scene.add(camera);
     scene.visible = false;
 
-    geometry = new Three.BoxGeometry(1, 1, 1);
-    material = new Three.MeshBasicMaterial({
+    geometry = new THREE.BoxGeometry(1, 1, 1);
+    material = new THREE.MeshBasicMaterial({
         color: 0x008000,
         transparent: true,
         opacity: 0.6
     });
-    cube = new Three.Mesh(geometry, material);
+    cube = new THREE.Mesh(geometry, material);
 
     scene.add(cube);
 
