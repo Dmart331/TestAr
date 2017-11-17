@@ -31,7 +31,7 @@ function init(){
 
     geometry = new Three.BoxGeometry(1, 1, 1);
     material = new Three.MeshBasicMaterial({
-        color: 0xFF00FF,
+        color: 0x008000,
         transparent: true,
         opacity: 0.6
     });
@@ -108,5 +108,6 @@ function render(){
 
 
     mesh.rotateX(.01);
+    mesh.rotateY(.01);
 
 }          
