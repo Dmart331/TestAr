@@ -45,12 +45,12 @@ function init(){
     loader.load('assets/data/BB.fbx', function (object) {
         geometry = object.geometry;
         material = object.material;
-
+        mesh = object;
         scene.add( object );
     }, onProgress, onError );
 
-
-  
+    console.log("Adding mesh");
+    scene.add(mesh);
     var onError = function (xhr) {
         console.error(xhr);
     };
