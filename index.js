@@ -42,12 +42,15 @@ function init(){
     };
 
     var loader = new THREE.FBXLoader( manager );
-    loader.load( 'assets/data/BB.fbx', function( object ) {
+    loader.load('assets/data/BB.fbx', function (object) {
+        geometry = object.geometry;
+        material = object.material;
+
         scene.add( object );
     }, onProgress, onError );
 
 
-
+  
     var onError = function (xhr) {
         console.error(xhr);
     };
