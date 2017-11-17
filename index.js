@@ -129,7 +129,4 @@ function render(){
     arContext.update(arSource.domElement);
     scene.visible = camera.visible;
 
-
-    mesh.rotateX(.01);
-
 }          
