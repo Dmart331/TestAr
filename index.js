@@ -33,6 +33,7 @@ function init(){
     manager.onProgress = function (item, loaded, total) {
         console.log(item, loaded, total);
     };
+
     var onProgress = function (xhr) {
         if (xhr.lengthComputable) {
             var percentComplete = xhr.loaded / xhr.total * 100;
