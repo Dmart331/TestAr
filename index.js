@@ -48,6 +48,10 @@ function init(){
 
 
 
+    var onError = function (xhr) {
+        console.error(xhr);
+    };
+
     //mesh = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshBasicMaterial({
     //    color: 0x008000,
     //    transparent: true,
