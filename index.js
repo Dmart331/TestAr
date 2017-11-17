@@ -29,13 +29,30 @@ function init(){
     scene.add(camera);
     scene.visible = false;
 
+    var manager = new THREE.LoadingManager();
+    manager.onProgress = function (item, loaded, total) {
+        console.log(item, loaded, total);
+    };
+    var onProgress = function (xhr) {
+        if (xhr.lengthComputable) {
+            var percentComplete = xhr.loaded / xhr.total * 100;
+            console.log(Math.round(percentComplete, 2) + '% downloaded');
+        }
+    };
 
-    mesh = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshBasicMaterial({
-        color: 0x008000,
-        transparent: true,
-        opacity: 0.5
-    }));
-    scene.add(mesh);
+    var loader = new THREE.FBXLoader( manager );
+    loader.load( 'Assets/Data/BB.fbx', function( object ) {
+        scene.add( object );
+    }, onProgress, onError );
+
+
+
+    //mesh = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshBasicMaterial({
+    //    color: 0x008000,
+    //    transparent: true,
+    //    opacity: 0.5
+    //}));
+    //scene.add(mesh);
 
 
 
