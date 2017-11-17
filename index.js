@@ -29,13 +29,15 @@ function init(){
     scene.add(camera);
     scene.visible = false;
 
-
-    mesh = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshBasicMaterial({
+    geometry = new Three.BoxGeometry(1, 1, 1);
+    material = new Three.MeshBasicMaterial({
         color: 0xFF00FF,
         transparent: true,
-        opacity: 0.5
-    }));
-    scene.add(mesh);
+        opacity: 0.6
+    });
+    cube = new Three.Mesh(geometry, material);
+
+    scene.add(cube);
 
 
 
@@ -105,6 +107,6 @@ function render(){
     scene.visible = camera.visible;
 
 
-    mesh.rotateX(.1);
+    mesh.rotateX(.01);
 
 }          
