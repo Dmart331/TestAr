@@ -42,13 +42,14 @@ function init(){
     };
 
     var loader = new THREE.FBXLoader( manager );
-    loader.load('assets/data/BB.fbx', function (object) {
+    loader.load('assets/data/Monkey.fbx', function (object) {
         geometry = object.geometry;
         material = object.material;
         console.log("Adding mesh");
 
         mesh = new THREE.Mesh(geometry, material);
-        scene.add( mesh );
+        scene.add(mesh);
+        console.log("Mesh Added");
     }, onProgress, onError );
 
 
@@ -96,7 +97,7 @@ function init(){
     });
 
 
-
+    console.log(arMarker[2] + " is the AR marker 2");
 
 
     /* handle */
