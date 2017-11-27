@@ -15,7 +15,7 @@ init();
 function init(){
 
 
-
+    loadMonkey();
     container = document.getElementById('container');
 
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -43,15 +43,20 @@ function init(){
 
     var loader = new THREE.FBXLoader(manager);
     console.log("Loading? " + loader);
-    loader.load('assets/data/Monkey.fbx', function (object) {
-        geometry = object.geometry;
-        material = object.material;
-        console.log("Adding mesh");
 
-        mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
-        console.log("Mesh Added");
-    }, onProgress, onError );
+    function loadMonkey() {
+
+        loader.load('assets/data/Monkey.fbx', function (object) {
+            geometry = object.geometry;
+            material = object.material;
+            console.log("Adding mesh");
+
+            mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+            console.log("Mesh Added");
+        }, onProgress, onError);
+    }
+
 
 
 
