@@ -40,20 +40,23 @@ function init(){
         }
     };
 
-    var loader = new THREE.FBXLoader(manager);
+    var loader = new THREE.ColladaLoader(manager);
+    loadMonkey();
+    console.log("loadMonkey called");
 
-
-    loader.load('./Monkey.fbx', function (object) {
-        console.log("47");
-        geometry = object.geometry;
-        console.log("49");
-        material = object.material;
-        console.log("51");
-        mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
-        console.log("Mesh Added");
-    }, onProgress, onError);
-
+    function loadMonkey() {
+        loader.load('Monkey.dae', function (object) {
+            console.log("47");
+            geometry = object.geometry;
+            console.log("49");
+            material = object.material;
+            console.log("51");
+            mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+            console.log("Mesh Added");
+        }, onProgress, onError);
+    }
+    
     
 
 

@@ -29,7 +29,7 @@
  */
 
 (function () {
-
+console.log("ARE WE HERE!");
     THREE.FBXLoader = function (manager) {
 
         this.manager = (manager !== undefined) ? manager : THREE.DefaultLoadingManager;
@@ -47,14 +47,15 @@
             var loader = new THREE.FileLoader(this.manager);
             loader.setResponseType('arraybuffer');
             loader.load(url, function (buffer) {
-
+			console.log("50 FBXLOADER"  + self.parse(buffer, resourceDirectory));
                 try {
-
+				console.log("FBX 52" );
                     var scene = self.parse(buffer, resourceDirectory);
+					console.log("calling onLoad");
                     onLoad(scene);
 
                 } catch (error) {
-
+				console.log("error 58")
                     window.setTimeout(function () {
 
                         if (onError) onError(error);
