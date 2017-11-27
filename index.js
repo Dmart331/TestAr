@@ -46,14 +46,7 @@ function init(){
 
     function loadMonkey() {
         loader.load('Monkey.dae', function (object) {
-            console.log("47");
-            geometry = object.geometry;
-            console.log("49");
-            material = object.material;
-            console.log("51");
-            mesh = new THREE.Mesh(geometry, material);
-            scene.add(mesh);
-            console.log("Mesh Added");
+            scene.add(object);
         }, onProgress, onError);
     }
     
