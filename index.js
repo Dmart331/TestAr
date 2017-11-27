@@ -41,7 +41,8 @@ function init(){
         }
     };
 
-    var loader = new THREE.FBXLoader( manager );
+    var loader = new THREE.FBXLoader(manager);
+    console.log("Loading? " + loader);
     loader.load('assets/data/Monkey.fbx', function (object) {
         geometry = object.geometry;
         material = object.material;
